@@ -6,7 +6,7 @@
   "author": "Jose Rogerio de Almeida Junior <almeidajr.vr@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && typeorm migration:run",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files && typeorm migration:run",
     "dev": "tsnd --files --exit-child -r tsconfig-paths/register ./src/shared/infra/http/server.ts --inspect --transpileOnly",
     "start": "node dist/shared/infra/http/server.js",
     "typeorm-ts": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
