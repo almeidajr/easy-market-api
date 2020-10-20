@@ -1,5 +1,4 @@
 import puppeteer, { Browser } from 'puppeteer';
-import { parse } from 'date-fns';
 
 import IScrapingProvider from '../models/IScrapingProvider';
 
@@ -9,6 +8,7 @@ class PuppeteerProvider implements IScrapingProvider {
   private async openBrowser() {
     this.browser = await puppeteer.launch({
       ignoreHTTPSErrors: true,
+      args: ['--no-sandbox'],
     });
   }
 
