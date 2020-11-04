@@ -26,7 +26,7 @@ interface IRequest {
 }
 
 @injectable()
-class CreateUserService {
+class CreateNfceDataService {
   constructor(
     @inject('ScrapingProvider')
     private scrapingProvider: IScrapingProvider,
@@ -446,4 +446,4 @@ class CreateUserService {
   }
 }
 
-export default CreateUserService;
+export default CreateNfceDataService;

@@ -9,6 +9,8 @@ const nfcesController = new NfcesController();
 
 appointmentsRouter.use(ensureAuthenticated);
 
+appointmentsRouter.get('/', nfcesController.index);
+
 appointmentsRouter.post(
   '/',
   celebrate({

@@ -20,6 +20,14 @@ class NfcesRepository implements INfcesRepository {
     return nfce;
   }
 
+  public async findByUser(userId: string): Promise<Nfce[]> {
+    const nfces = await this.ormRepository.find({
+      where: { userId },
+    });
+
+    return nfces;
+  }
+
   public async create(nfceData: ICreateNfceDTO): Promise<Nfce> {
     const nfce = this.ormRepository.create(nfceData);
 
